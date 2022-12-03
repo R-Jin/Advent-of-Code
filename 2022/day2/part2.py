@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
+
+# --------------------- Part 2 ---------------------
+# Reading each of the lines in the text file into the list
 lines = []
 with open('input') as f:
     lines = f.readlines()
 
 score = 0
+
 for round in lines:
     elf = round[0]
-    me = round[-2]
+    outcome = round[-2]
 
-    if (me == 'X'):
+    # The case where we need to lose
+    if (outcome == 'X'):
         if (elf == 'A'):
             score += 3
         elif (elf == 'B'):
@@ -16,7 +21,8 @@ for round in lines:
         elif (elf == 'C'):
             score += 2
 
-    elif (me == 'Y'):
+    # The case where we need to end the round in draw
+    elif (outcome == 'Y'):
         score += 3
         if (elf == 'A'):
             score += 1
@@ -25,7 +31,8 @@ for round in lines:
         elif (elf == 'C'):
             score += 3
 
-    elif (me == 'Z'):
+    # The case where we need to win
+    elif (outcome == 'Z'):
         score += 6
         if (elf == 'A'):
             score += 2

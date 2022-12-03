@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
+
+# --------------------- Part 1 ---------------------
+# Reading each of the lines in the text file into the list
 lines = []
 with open('input') as f:
     lines = f.readlines()
 
-
-hi = 0
-s = 0
+highest = 0
+sum = 0
 
 for number in lines:
+    # Newline means end of the group
     if number == '\n':
-        if hi < s:
-            hi = s
-        s = 0
+        if highest < sum:
+            highest = sum
+        sum = 0
     else:
-        s += int(number)
+        sum += int(number)
 
-print(hi)
+print(highest)
