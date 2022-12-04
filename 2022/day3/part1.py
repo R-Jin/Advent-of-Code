@@ -23,6 +23,7 @@ for rucksack in lines:
     compartment2 = rucksack[mid:]
 
     common_item = get_common_item_type(compartment1, compartment2)
+
     # Add 1 to sum due to zero indexing
     sum += priority.index(common_item) + 1
 
