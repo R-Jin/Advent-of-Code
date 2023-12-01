@@ -48,12 +48,14 @@ fn get_calibration_value(input: &str) -> i32 {
         }
     }
 
+    // Convert from num to digit
     let mut l_num = nums.iter().position(|&num| num == l_num).unwrap() as i32;
     l_num = if l_num < 9 {l_num + 1} else {l_num - 8};
 
     let mut r_num = nums.iter().position(|&num| num == r_num).unwrap() as i32;
     r_num = if r_num < 9 {r_num + 1} else {r_num - 8};
 
+    // Return number
     l_num * 10 + r_num
 
 }
